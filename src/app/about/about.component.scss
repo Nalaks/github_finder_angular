@@ -1,0 +1,15 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
