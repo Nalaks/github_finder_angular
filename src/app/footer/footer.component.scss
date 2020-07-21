@@ -1,0 +1,16 @@
+#footer-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(216, 190, 190);
+  position: fixed;
+  bottom: 0;
+  height: 2.5rem;
+
+
+  span {
+    font-size: 1.2rem;
+    color: black;
+    margin-right: 1rem;
+  }
+}

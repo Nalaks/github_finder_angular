@@ -1,1 +1,28 @@
-<p>user-search works!</p>
+<div class="card-container">
+  <mat-card id="card">
+    <form (submit)="searchUser(test)" novalidate class="form-input">
+      <mat-form-field floatLabel="never" class="input-field">
+        <input matInput type="search" name="test" [(ngModel)]="test">
+        <mat-placeholder class="placeholder">Search Github Users...</mat-placeholder>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="warn"><span>Submit</span></button>
+        <button mat-raised-button (click)="clearUsers(); $event.preventDefault()"><span>Clear</span></button>
+      </div>
+    </form>
+    
+  </mat-card>
+</div>
+
+<div class="user-container" *ngIf="currentUser">
+  <mat-card class="user-card container" *ngFor="let user of currentUser">
+    <mat-card-header>
+      <img mat-card-avatar src="{{user.avatar_url}}">
+    </mat-card-header>
+    <mat-card-title>{{user.login}}</mat-card-title>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-actions>
+      <button mat-raised-button color="warn"><span>More Details</span></button>
+    </mat-card-actions>
+  </mat-card>
+</div>
