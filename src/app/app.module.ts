@@ -12,6 +12,7 @@ import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { UserSearchService } from './services/user-search.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserSearchService } from './services/user-search.service';
     NavComponent,
     AboutComponent,
     UserSearchComponent,
-    FooterComponent
+    FooterComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

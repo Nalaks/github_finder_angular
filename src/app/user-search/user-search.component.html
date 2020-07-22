@@ -1,17 +1,22 @@
 <div class="card-container">
   <mat-card id="card">
-    <form (submit)="searchUser(test)" novalidate class="form-input">
+    <form (submit)="searchUser(inputText)" novalidate class="form-input">
       <mat-form-field floatLabel="never" class="input-field">
-        <input matInput type="search" name="test" [(ngModel)]="test">
+        <input matInput type="search" name="test" [(ngModel)]="inputText">
         <mat-placeholder class="placeholder">Search Github Users...</mat-placeholder>
       </mat-form-field>
       <div>
         <button mat-raised-button color="warn"><span>Submit</span></button>
         <button mat-raised-button (click)="clearUsers(); $event.preventDefault()"><span>Clear</span></button>
+        <button mat-raised-button color="accent" routerLink="/user/{{randomUser.login}}"><span>Random User</span></button>
       </div>
     </form>
     
   </mat-card>
+</div>
+
+<div id="spinner-container" *ngIf="loading">
+  <mat-spinner color="warn"></mat-spinner>
 </div>
 
 <div class="user-container" *ngIf="currentUser">
@@ -22,7 +27,11 @@
     <mat-card-title>{{user.login}}</mat-card-title>
     <mat-divider [inset]="true"></mat-divider>
     <mat-card-actions>
-      <button mat-raised-button color="warn"><span>More Details</span></button>
+      <a mat-raised-button color="warn" routerLink="/user/{{user.login}}" (click)="saveData()"><span>More Details</span></a>
     </mat-card-actions>
   </mat-card>
 </div>
+
+
+
+

@@ -1,0 +1,54 @@
+<div id="spinner-container" *ngIf="loading">
+  <mat-spinner color="warn"></mat-spinner>
+</div>
+
+<div id="container" *ngIf="user">
+
+  <div class="card-container">
+    <button mat-button (click)="goBack()"><mat-icon class="arrow">keyboard_arrow_left</mat-icon><span>Back to Search</span></button>
+    <mat-card class="user-card-details">
+      <div class="left">
+        <mat-card-header>
+          <img mat-card-avatar src="{{user.avatar_url}}">
+        </mat-card-header>
+        <mat-card-title>{{user.name}}</mat-card-title>
+        <mat-card-subtitle>Location: {{user.location}}</mat-card-subtitle>
+      </div>
+      <mat-divider [inset]="true" [vertical]="true"></mat-divider>
+      <div class="right">
+        <mat-card-title>Bio</mat-card-title>
+        <mat-card-content>
+          <p>{{user.bio}}</p>
+
+          <a mat-raised-button color="warn" href="{{user.html_url}}" target="_blank"><span>Github Profile</span></a>
+
+          <p>Username: {{user.login}}</p>
+          <p>Company: {{user.company}}</p>
+          <p>Website: <a href="http://{{user.blog}}" target="_blank">Link</a></p>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+
+  <mat-card class="chip-list">
+    <mat-chip-list aria-label="user info chips">
+      <mat-chip>Followers: {{user.followers}}</mat-chip>
+      <mat-chip>Following: {{user.following}}</mat-chip>
+      <mat-chip>Public Repos: {{user.public_repos}}</mat-chip>
+      <mat-chip>Public Gists: {{user.public_gists}}</mat-chip>
+    </mat-chip-list>
+  </mat-card>
+
+  <mat-card class="repo-list" *ngFor="let repo of repos">
+    <mat-card-title class="title"><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></mat-card-title>
+    <mat-card-content>
+      <p>{{repo.description}}</p>
+    </mat-card-content>
+    <mat-chip-list aria-label="repo info chips">
+      <mat-chip><mat-icon class="star">star_border</mat-icon>Stars: {{repo.stargazers_count}}</mat-chip>
+      <mat-chip><mat-icon class="eye">visibility</mat-icon>Watchers: {{repo.watchers_count}}</mat-chip>
+      <mat-chip><mat-icon class="forked">usb</mat-icon>Forks: {{repo.forks_count}}</mat-chip>
+    </mat-chip-list>
+  </mat-card>
+</div>
+
