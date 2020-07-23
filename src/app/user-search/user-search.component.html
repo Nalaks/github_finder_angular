@@ -5,7 +5,7 @@
         <input matInput type="search" name="test" [(ngModel)]="inputText">
         <mat-placeholder class="placeholder">Search Github Users...</mat-placeholder>
       </mat-form-field>
-      <div>
+      <div class="buttons">
         <button mat-raised-button color="warn"><span>Submit</span></button>
         <button mat-raised-button (click)="clearUsers(); $event.preventDefault()"><span>Clear</span></button>
         <button mat-raised-button color="accent" routerLink="/user/{{randomUser.login}}"><span>Random User</span></button>

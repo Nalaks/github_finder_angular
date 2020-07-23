@@ -150,3 +150,71 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 480px) {
+
+  #container {
+  
+    .card-container {
+      width: 80%;
+ 
+    }
+  
+    .user-card-details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  
+      .left {
+        width: 100%;
+  
+        img {
+          height: 12rem;
+          width: 12rem;
+        }
+  
+        mat-card-title {
+          font-size: 2rem;
+        }
+  
+        mat-card-subtitle {
+          font-size: 1.5rem;
+        }
+      }
+  
+      .right {
+        width: 100%;
+        text-align: center;
+
+        mat-card-title {
+          font-size: 2rem;
+        }
+      }
+    }
+    .chip-list {
+      flex-direction: column;
+      width: 70%;
+    }
+
+    .repo-list {
+      width: 70%;
+
+      mat-card-title {
+        
+        a {
+          font-size: 2rem;
+        }
+      }
+  
+      mat-card-content {
+        width: 100%;
+  
+        p {
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+        }
+      }
+    }
+  }
+}

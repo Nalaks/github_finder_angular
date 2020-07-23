@@ -40,3 +40,43 @@
 
 }
 
+@media (max-width: 480px) {
+
+  #nav-bar {
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }  
+    
+    i {
+        margin-left: 1.5rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+    
+    a {
+      font-size: 1.2rem;
+    }
+  
+    span:first-child {
+      margin: 0;
+    }
+  
+    span {
+      margin-right: 1rem;
+    }
+    
+    span:last-child {
+      margin-right: 1.5rem;
+    }
+  
+    .divider {
+      font-size: 1.2rem;
+    }
+  
+  }
+}
